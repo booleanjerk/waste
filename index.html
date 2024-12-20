@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste</title>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         *,
         *::before,
@@ -15,39 +18,38 @@
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
 
         .banner {
             position: relative;
             text-align: center;
-            width: 85%; /* Ensures full width for banners */
+            width: auto;
             height: 100vh;
+            display: block;
         }
 
         .banner img {
-            width: 80%; /* Responsive image */
+            width: 100%;
             height: auto;
         }
 
         .banner .text-box {
             position: absolute;
-            bottom: 10%;
+            bottom: -1%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -0%); /* Center the text box precisely */
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
-            max-width: 100%;
-        }
-
-        .chuckles {
-            margin-bottom: 0;
+            max-width: 90%;
+            border: 3px green solid;
         }
 
         .content-section {
@@ -87,10 +89,12 @@
             text-align: center;
         }
 
-       
+        .spacer {
+            height: 200px;
+        }
 
         p {
-            font-family: "Kanit", serif;
+            font-family: "Lato", sans-serif;
             font-size: 1.6rem;
             padding: 10px;
         }
@@ -108,69 +112,40 @@
             margin: 20px 0;
         }
 
-        /* Small screens (phones) */
-        @media (max-width: 600px) {
-            img {
-                border: 3px solid red;
-            }
+        @media (max-width: 768px) {
+         
 
+    .banner {
+        height: auto; /* Allow the height to shrink dynamically */
+    }
 
-            h1, h2 {
-                font-size: 1rem;
-                text-wrap: pretty;
-            }
+    .banner img {
+        width: 100%; /* Ensure the image scales for smaller screens */
+        height: auto;
+    }
 
-            p {
-                font-size: 1rem;
-            }
-
-            .content-section {
-                flex-direction: column; /* Stack sections vertically */
-                padding: 10px;
-            }
-
-            .content-section .image-box,
-            .content-section .text-box {
-                width: 100%; /* Full width for small screens */
-                margin: 10px 0;
-            }
-
-            hr {
-                display: block;
-                height: 5px;
-                border-radius: 2px;
-                background-color: #f9f9f9
-            }
-
-            .banner {
-            width: 100%;
-            height: 100vh;
-        }
-
-        .text-box {
-            transform: translateY(0%);
-        }
-
-        }
+    .banner .text-box {
+        max-width: 80%; /* Adjust text box width for smaller screens */
+        font-size: 1rem; /* Resize font for smaller screens */
+    }
+}
 
         /* Medium screens (tablets) */
         @media (max-width: 1024px) {
-            img {
-                border: 3px solid blue;
-            }
 
             h1, h2 {
-                font-size: 1.7rem;
+                font-size: 2.5rem;
                 text-wrap: pretty;
             }
 
             p {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
             
             .banner {
-            width: 100%;
-            height: 100vh;
+            width: 100vh;
+            height: auto;
+            margin: 0;
         }
 
             .content-section {
@@ -181,6 +156,7 @@
             .content-section .image-box,
             .content-section .text-box {
                 flex: 1 1 100%; /* Allow flexible resizing */
+                width: 100%;
                 margin: 15px 0;
             }
 
@@ -191,10 +167,11 @@
                 background-color: #f9f9f9
             }
 
-
+            span {
+            text-decoration: underline;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+        }
     </style>
 
 </head>
@@ -207,6 +184,8 @@
             <h1>Uninteresting Ways To Waste One's Life</h1>
         </div>
     </section>
+
+    <div class="spacer"></div>
 
     <!-- Content Sections -->
     <section class="content-section" data-aos="fade-up">
@@ -301,7 +280,7 @@
 
     <section class="content-section" data-aos="fade-up">
         <div class="text-box">
-            <p>Nyoman Seligman, 21, is deeply passionate about gaming, dedicating his time
+            <p>Nyoman is deeply passionate about gaming, dedicating his time
                to mastering virtual worlds and competing with others. Strategic and
                determined, he finds joy and purpose in every challenge. For Nyoman,
                gaming is more than a hobby—it’s his ultimate passion.</p>
@@ -314,20 +293,21 @@
 
     <!--bottom-->
 
-    
-
-    <section class="banner" data-aos="fade-up" data-aos-delay="1000">
-        <img src="banner-end.jpg" alt="Top Banner">
-        <div class="text-box">
-            <h2>Yes, there are <strong>many</strong> uninteresting ways to waste one's life!</h2>
+    <section class="content-section" data-aos="fade-up" data-aos-delay="1000">
+        <div class="image-box">
+            <img src="banner-end.jpg" alt="Old wise man chuckles.">
         </div>
+        <div class="text-box">
+            <h2>"So you see,<br>there are <span>many</span><br>uninteresting ways to<br>waste one's life!"</h2>
+        </div>
+        <hr>
     </section>
-    <p> </p>
-    <p> </p>
  
     <section class="bottom content-section">
-        <img src="banner-bottom.jpg" alt="Bottom Banner" class="image-box">
+        <img src="banner-bottom.jpg" alt="Bottom Banner" class="image-box" data-aos="fade-left" data-aos-delay="1000">
     </section>
+
+    <div class="spacer"></div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
