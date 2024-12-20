@@ -26,7 +26,7 @@
         .banner {
             position: relative;
             text-align: center;
-            width: 60%; /* Ensures full width for banners */
+            width: 85%; /* Ensures full width for banners */
             height: 100vh;
         }
 
@@ -43,7 +43,7 @@
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
-            max-width: 90%;
+            max-width: 100%;
         }
 
         .chuckles {
@@ -110,6 +110,11 @@
 
         /* Small screens (phones) */
         @media (max-width: 600px) {
+            img {
+                border: 3px solid red;
+            }
+
+
             h1, h2 {
                 font-size: 1rem;
                 text-wrap: pretty;
@@ -138,13 +143,22 @@
             }
 
             .banner {
-            width: 130%;
+            width: 100%;
             height: 100vh;
         }
+
+        .text-box {
+            transform: translateY(0%);
+        }
+
         }
 
         /* Medium screens (tablets) */
         @media (max-width: 1024px) {
+            img {
+                border: 3px solid blue;
+            }
+
             h1, h2 {
                 font-size: 1.7rem;
                 text-wrap: pretty;
@@ -155,7 +169,7 @@
             }
             
             .banner {
-            width: 130%;
+            width: 100%;
             height: 100vh;
         }
 
@@ -176,6 +190,8 @@
                 border-radius: 2px;
                 background-color: #f9f9f9
             }
+
+
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
