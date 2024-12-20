@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waste</title>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" 
-          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            line-height: 1.5;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -18,10 +26,12 @@
         .banner {
             position: relative;
             text-align: center;
+            width: 60%; /* Ensures full width for banners */
+            height: 100vh;
         }
 
         .banner img {
-            width: 100%;
+            width: 80%; /* Responsive image */
             height: auto;
         }
 
@@ -33,55 +43,56 @@
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
+            max-width: 90%;
+        }
+
+        .chuckles {
+            margin-bottom: 0;
         }
 
         .content-section {
             display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+            align-items: center; /* Vertically align items */
+            justify-content: space-between; /* Spread items horizontally */
+            flex-wrap: nowrap; /* Prevent wrapping */
+            width: 100%;
+            padding: 20px 5%;
+            gap: 20px; /* Space between elements */
+        }     
 
         .content-section .image-box,
         .content-section .text-box {
             flex: 1;
-            min-width: 45%;
             margin: 20px;
+            max-width: 100%; /* Allows proper resizing */
         }
 
-        .end {
-            margin-top: 30px;
-        }
-
-        h1 {
-            font-family: "Kanit", serif;
-            font-size: 4rem;
-            font-weight: 900;
-        }
-
-        h2 {
-            font-family: "Kanit", serif;
-            font-size: 3rem;
-            font-weight: 900;
-        }
-
-        .image-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-box img {
-            max-width: 100%;
+        .content-section img {
+            max-width: 100%; /* Ensures images resize properly */
             height: auto;
             border-radius: 5px;
         }
 
-        p {
+        h1 {
+            font-family: "Kanit", serif;
+            font-weight: 700;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        h2 {
             font-family: "Kanit", serif;
             font-size: 2rem;
-            padding: 0 10px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+       
+
+        p {
+            font-family: "Kanit", serif;
+            font-size: 1.6rem;
+            padding: 10px;
         }
 
         .text-box {
@@ -91,15 +102,73 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        @media (max-width: 768px) {
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        /* Small screens (phones) */
+        @media (max-width: 600px) {
+            h1, h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+
             .content-section {
-                flex-direction: column;
+                flex-direction: column; /* Stack sections vertically */
+                padding: 10px;
+            }
+
+            .content-section .image-box,
+            .content-section .text-box {
+                width: 100%; /* Full width for small screens */
+                margin: 10px 0;
+            }
+
+            hr {
+                display: block;
+                height: 5px;
+                border-radius: 2px;
+                background-color: #f9f9f9
             }
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+        /* Medium screens (tablets) */
+        @media (max-width: 1024px) {
+            h1, h2 {
+                font-size: 2.5rem;
+            }
 
+            p {
+                font-size: 1.4rem;
+            }
+
+            .content-section {
+                flex-wrap: wrap;
+                padding: 15px 5%;
+            }
+
+            .content-section .image-box,
+            .content-section .text-box {
+                flex: 1 1 100%; /* Allow flexible resizing */
+                margin: 15px 0;
+            }
+
+            hr {
+                display: block;
+                height: 5px;
+                border-radius: 2px;
+                background-color: #f9f9f9
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
     </style>
+
 </head>
 <body>
 
@@ -117,15 +186,16 @@
             <img src="image1.jpg" alt="Young woman holding a thick wad of cash.">
         </div>
         <div class="text-box">
-            <p>Vanessa King, 17, just wants to get rich! She views financial success as
+            <p>Vanessa just wants to get rich! She views financial success as
                the ultimate goal, tirelessly working to build her empire. She's ready
-               to do what it takes to make it big - <strong>whatever</strong> it takes!</p>
+               to do what it takes to build her wealth - <strong>whatever</strong> it takes!</p>
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
         <div class="text-box">
-            <p>Liam Carter, 26, is consumed by his quest for status. Charismatic and
+            <p>Liam, 26, is consumed by his quest for status. Charismatic and
                strategic, he thrives on recognition and influence, meticulously
                crafting his image. For Liam, prestige and social standing are the
                ultimate achievements, driving every decision he makes.</p>
@@ -133,6 +203,7 @@
         <div class="image-box">
             <img src="image2.jpg" alt="Young man seeking status.">
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
@@ -140,16 +211,17 @@
             <img src="image3.jpg" alt="Young man dressed sharply.">
         </div>
         <div class="text-box">
-            <p>Kai Johnson, 24, is determined to become a renowned influencer. Creative
+            <p>Kai is determined to become a renowned influencer. Creative
                and tech-savvy, he carefully curates content to grow his online
                presence. For Kai, fame and digital impact are the ultimate goals,
                fueling his relentless drive for followers and recognition.</p>
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
         <div class="text-box">
-            <p>Priya Sharma, 24, is fiercely driven by her ambition for power. Strategic
+            <p>Priya, 24, is fiercely driven by her ambition for power. Strategic
                and unyielding, she navigates corporate and social spheres with
                precision. Priya views influence and authority as the ultimate
                achievements, relentlessly working to secure her place at the top.</p>
@@ -157,23 +229,26 @@
         <div class="image-box">
             <img src="image4.jpg" alt="Young professional woman seeking power.">
         </div>
+        <hr>
     </section>
+
 
     <section class="content-section" data-aos="fade-up">
         <div class="image-box">
             <img src="image5.jpg" alt="Young woman looking to experience all of life's pleasures.">
         </div>
         <div class="text-box">
-            <p>Maya Rivers, 19, lives for the pursuit of joy and freedom. Spirited and
+            <p>Maya, 19, lives for the pursuit of joy and freedom. Spirited and
                adventurous, she embraces life’s pleasures with unreserved enthusiasm,
                from music and dance to exploring nature. For Maya, happiness and
                living in the moment are life’s ultimate rewards.</p>
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
         <div class="text-box">
-            <p>Jordan Brooks, 22, dreams of exploring every corner of the world.
+            <p>Jordan dreams of exploring every corner of the world.
                Adventurous and curious, he is captivated by new cultures and
                experiences. For Jordan, travel represents freedom, discovery, and
                personal growth, fueling his relentless desire to see the globe.</p>
@@ -181,6 +256,7 @@
         <div class="image-box">
             <img src="image6.jpg" alt="Young man setting off on an adventure.">
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
@@ -188,12 +264,12 @@
             <img src="image7.jpg" alt="Young woman looking intensely at viewer.">
         </div>
         <div class="text-box">
-            <p>Freya Lindstrom, 21, carries the weight of a troubled childhood and
-               dreams of escaping its lingering pain. Her life is one of constant
-               reinvention and trying new activities that distract her. While her
-               friends view her as destructive at times, Freya is just trying to
-               avoid the pain within.</p>
+            <p>Freya bears the burden of a troubled past and longs to escape its lingering shadows. 
+                Her life is a cycle of reinvention, filled with new pursuits to keep her mind 
+                occupied. While her friends sometimes see her actions as reckless and sometimes 
+                destructive, Freya is simply seeking relief from the pain she carries inside.</p>
         </div>
+        <hr>
     </section>
 
     <section class="content-section" data-aos="fade-up">
@@ -206,19 +282,26 @@
         <div class="image-box">
             <img src="image8.jpg" alt="Young man playing a video game.">
         </div>
+        <hr>
     </section>
 
-    <!-- Bottom Section -->
-    <section class="banner">
-        <img src="banner-bottom.jpg" alt="Bottom Banner">
-    </section>
+    <!--bottom-->
 
-    <section class="banner end">
-        <img src="banner-end.jpg" alt="Old man laughing at himself.">
+    
+
+    <section class="banner" data-aos="fade-up" data-aos-delay="1000">
+        <img src="banner-end.jpg" alt="Top Banner">
         <div class="text-box">
-            <h2>Yes, there are many uninteresting ways to waste one's life!</h2>
+            <h2>Yes, there are <strong>many</strong> uninteresting ways to waste one's life!</h2>
         </div>
     </section>
+
+ 
+    <section class="bottom content-section">
+        <img src="banner-bottom.jpg" alt="Bottom Banner" class="image-box">
+    </section>
+<p> </p>
+<p> </p>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -226,7 +309,7 @@
             duration: 1000, // Animation duration in milliseconds
             once: false, // Ensures animations trigger every time an element
                           // comes into view
-            offset: 120, // Offset (in pixels) from the viewport
+            offset: 200, // Offset (in pixels) from the viewport
             easing: 'ease-in-out', // Easing for animations
         });
     </script>
